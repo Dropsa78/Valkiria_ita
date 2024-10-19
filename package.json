@@ -14,5 +14,8 @@
   "type": "module",
   "workspaces": [
     "src/Val1_frontend"
-  ]
+  ],
+  "dependencies": {
+    "jspdf": "^2.5.2"
+  }
 }

@@ -1,37 +1,139 @@
+// index.scss
+
+// Variables de colores
+$color-fondo: #f4f4f4;
+$color-principal: #003366; // Azul oscuro
+$color-secundario: #0055a5; // Azul medio
+$color-texto: #333;
+$color-texto-secundario: #666;
+$color-boton: #007bff; // Azul botón
+$color-boton-hover: darken($color-boton, 10%);
+
+// Estilos generales
 body {
-  font-family: sans-serif;
-  font-size: 1.5rem;
+  background-color: $color-fondo;
+  font-family: Arial, sans-serif;
+  color: $color-texto;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-  max-width: 50vw;
-  max-height: 25vw;
-  display: block;
-  margin: auto;
+h1 {
+  text-align: center;
+  color: $color-principal;
 }
 
+h2 {
+  color: $color-secundario;
+  margin-top: 20px;
+}
+
+// Estilos del formulario
 form {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  flex-flow: row wrap;
-  max-width: 40vw;
-  margin: auto;
-  align-items: baseline;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+
+  div {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        border-color: $color-principal;
+        outline: none;
+      }
+    }
+  }
+
+  button[type='submit'] {
+    background-color: $color-boton;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-boton-hover;
+    }
+  }
 }
 
-button[type="submit"] {
-  padding: 5px 20px;
-  margin: 10px auto;
-  float: right;
+// Estilos del mensaje de respuesta
+p {
+  text-align: center;
+  font-size: 16px;
+  color: $color-texto-secundario;
 }
 
-#greeting {
-  margin: 10px auto;
-  padding: 10px 60px;
-  border: 1px solid #222;
+// Estilos para el historial de licencias
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
-#greeting:empty {
-  display: none;
+button {
+  margin-top: 10px;
+  background-color: $color-boton;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-boton-hover;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+.licencia-container {
+  position: relative; // Para que el contenedor principal pueda usar position: absolute
+}
+
+.payment-button-container {
+  position: absolute;
+  bottom: 20px; // Ajusta según tu diseño
+  right: 20px; // Ajusta según tu diseño
+}
+
+.payment-button {
+  background-color: #4CAF50; // Color de fondo
+  color: white; // Color del texto
+  border: none; // Sin borde
+  padding: 10px 20px; // Relleno
+  font-size: 16px; // Tamaño de fuente
+  cursor: pointer; // Cambia el cursor al pasar sobre el botón
+  border-radius: 5px; // Bordes redondeados
+  transition: background-color 0.3s; // Transición suave para el color de fondo
+}
+
+.payment-button:hover {
+  background-color: #45a049; // Color de fondo al pasar el cursor
 }
